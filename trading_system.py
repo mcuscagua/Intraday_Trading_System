@@ -2,6 +2,7 @@
 import requests
 import configparser
 import pandas as pd
+import numpy as np
 import json
 import time as systime
 import ast
@@ -145,6 +146,7 @@ class API():
                         'CAD_CHF',
                         'CAD_HKD',
                         'USB30Y_USD']
+    
         
     def set_instruments(self):
         headers = {'Authorization':"Bearer "+ self.token}
@@ -270,9 +272,10 @@ class API():
           j = i.decode()
           k = json.loads(j)
           if (k['type'] != 'HEARTBEAT'):
-              print(k['instrument'])
-              print(str(k['bids']) + ' / ' + str(k['asks']))
-              print('\n')
+            print(k['instrument'])
+            print(str(k['bids']) + ' / ' + str(k['asks']))
+            print('\n')
+            return k
           else:
               print(j)          
 
