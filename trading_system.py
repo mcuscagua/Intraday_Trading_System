@@ -272,10 +272,11 @@ class API():
           j = i.decode()
           k = json.loads(j)
           if (k['type'] != 'HEARTBEAT'):
-            print(k['instrument'])
-            print(str(k['bids']) + ' / ' + str(k['asks']))
+            print(k)
+#             print(k['instrument'])
+#             print(str(k['bids']) + ' / ' + str(k['asks']))
             print('\n')
-            return k
+#             return k
           else:
               print(j)          
 
